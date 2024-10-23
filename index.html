@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice Generator</h1>
+        <form id="invoice-form">
+            <div class="invoice-details">
+                <div class="detail">
+                    <label for="facture-number">Invoice No.:</label>
+                    <input type="text" id="facture-number" name="facture-number" required>
+                </div>
+                <div class="detail">
+                    <label for="client">Client:</label>
+                    <input type="text" id="client" name="client" required>
+                </div>
+                <div class="detail">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="detail">
+                    <label for="reference">Reference:</label>
+                    <input type="text" id="reference" name="reference" required>
+                </div>
+            </div>
+
+            <div class="items-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Unit Price (HT)</th>
+                            <th>Total (HT)</th>
+                            <th>Total (TTC)</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="items-body">
+                        <tr>
+                            <td><input type="text" name="produit[]" required></td>
+                            <td><input type="number" name="quantite[]" min="1" value="1" required></td>
+                            <td><input type="number" name="prix-ht[]" min="0" step="0.01" value="0.00" required></td>
+                            <td><input type="number" name="total-ht[]" readonly></td>
+                            <td><input type="number" name="total-ttc[]" readonly></td>
+                            <td><button type="button" class="remove-item">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="add-item">Add Item</button>
+            </div>
+
+            <!-- New Added Table -->
+            <div class="debours-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expenses</th>
+                            <th>Amount TTC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shipping Fees</td>
+                            <td><input type="number" name="frais-expedition" min="0" step="0.01" value="0.00"></td>
+                        </tr>
+                        <tr>
+                            <td>Seller's Earnings on Order</td>
+                            <td><input type="number" name="gains-vendeur" min="0" step="0.01" value="0.00"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Totals -->
+            <div class="totals">
+                <div class="right-totals">
+                    <table>
+                        <tr>
+                            <td>VAT 20%:</td>
+                            <td id="tva">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total Expenses TTC:</td>
+                            <td id="total-debours">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total TTC:</td>
+                            <td id="total-ttc">0.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <button type="submit" id="generate-invoice">Create Invoice</button>
+        </form>
+    </div>
+
+    <!-- Linking JavaScript File -->
+    <script src="js/script.js"></script>
+</body>
+</html>

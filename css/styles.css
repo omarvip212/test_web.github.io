@@ -1,0 +1,167 @@
+/* styles.css */
+
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.invoice-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.detail {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+}
+
+.detail label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-weight: bold;
+}
+
+.detail input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.items-table table, .debours-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.items-table th, .items-table td, .debours-table th, .debours-table td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.items-table th, .debours-table th {
+    background-color: #0070b8;
+    color: white;
+}
+
+.items-table td input, .debours-table td input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#add-item {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#add-item:hover {
+    background-color: #218838;
+}
+
+.remove-item {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #c82333;
+}
+
+.totals {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.right-totals table {
+    width: 300px;
+    border-collapse: collapse;
+}
+
+.right-totals td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    font-size: 16px;
+}
+
+.right-totals td:first-child {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+#generate-invoice {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+#generate-invoice:hover {
+    background-color: #0069d9;
+}
+
+/* Responsive design for different devices */
+@media (max-width: 768px) {
+    .invoice-details {
+        flex-direction: column;
+    }
+
+    .detail {
+        flex: 1 1 100%;
+    }
+
+    .totals {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .right-totals table {
+        width: 100%;
+    }
+}
